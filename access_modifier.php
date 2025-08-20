@@ -1,7 +1,7 @@
 <?php
 class Animal {
     public $name;        // bisa diakses dimana saja
-    protected $color;    // hanya di class ini & subclass
+    protected $color;    // hanya di class ini & subclass (class turunan)
     private $age;        // hanya di class ini
 
     public function __construct($name, $color, $age) {
