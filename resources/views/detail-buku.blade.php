@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Detail Buku</title>
-</head>
-<body>
-    <h1>
-        Detail Buku {{ $id }}
-    </h1>
-</body>
-</html>
+@extends('layout',['judul' => 'Detail Buku'])
+
+@section('content')
+Disini Detail Buku {{ $id }}
+@endsection

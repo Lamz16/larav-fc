@@ -11,7 +11,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('buku');
+        $data = [
+            'listBook' => ['Harry Potter 1', 'Harry Potter 2', 'Harry Potter 3', 'Harry Potter 4', 'Harry   Potter 5']
+        ];
+        return view('buku', $data);
     }
 
     /**

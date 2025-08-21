@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Daftar Buku</title>
-</head>
-<body>
-    <h1>
-        Disini daftar buku
-    </h1>
-</body>
-</html>
+@extends('layout',['judul' => 'Daftar Buku'])
+
+@section('content')
+<h2>Disini Daftar Buku</h2>
+    <br>
+    @foreach($listBook as $books)
+        {{$books}} <br>
+    @endforeach
+
+@endsection
