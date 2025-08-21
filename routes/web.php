@@ -11,7 +11,14 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::prefix('buku')->middleware('valid-token')->group(function () {
+// Route::prefix('buku')->middleware('valid-token')->group(function () {
+
+//     Route::get('/', [BC::class, 'index']);
+
+//     Route::get('/detail/{id?}', [BC::class, 'show']);
+// });
+
+Route::prefix('buku')->group(function () {
 
     Route::get('/', [BC::class, 'index']);
 
