@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookController as BC;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,7 +13,7 @@ Route::get('/home', function () {
 
 Route::prefix('buku')->group(function () {
 
-    Route::get('/', [BookController::class, 'index']);
+    Route::get('/', [BC::class, 'index']);
 
-    Route::get('/detail/{id?}', [BookController::class, 'show']);
+    Route::get('/detail/{id?}', [BC::class, 'show']);
 });
