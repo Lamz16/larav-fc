@@ -4,7 +4,8 @@
 <h2>Disini Daftar Buku</h2>
     <br>
     @foreach($listBook as $books)
-        {{$books}} <br>
+    <p>{{$books['title']}} - {{formatRupiah($books['price'])}}</p>
+    <br>
     @endforeach
 
 @endsection
