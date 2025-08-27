@@ -66,7 +66,18 @@ Route::get('/testing', function(){
     //     'education' => 'Bachelor Of Information System'
     // ]);
 
-    $profileDetail = Profile::first();
-    dd($profileDetail -> user);
+    // $profileDetail = Profile::first();
+    // dd($profileDetail -> user);
 
+    $user = Usr::first();
+    // $user->products()->create([
+    //     'name' => 'Plate',
+    //     'description' => 'Plate Avengers',
+    //     'price' => 50000
+    // ]);
+    //dd($user->products()->where('name', 'Plate')->get());
+
+    return view('list-products', [
+        'products' => $user->products
+    ]);
 });

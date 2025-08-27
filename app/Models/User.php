@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\ProfileDetail as Profile;
+use App\Models\Product as Prod;
 
 class User extends Authenticatable
 {
@@ -49,5 +50,9 @@ class User extends Authenticatable
 
     public function profileDetail(){
         return $this-> hasOne(Profile::class);
+    }
+
+    public function products(){
+        return $this->hasMany(Prod::class);
     }
 }
