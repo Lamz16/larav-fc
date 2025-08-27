@@ -58,6 +58,6 @@ class User extends Authenticatable
     }
 
     public function eskuls(){
-        return $this->belongsToMany(Eskul::class, 'user_eskul', 'eskul_id','user_id');
+        return $this->belongsToMany(Eskul::class, 'user_eskul', 'user_id','eskul_id');
     }
 }

@@ -90,6 +90,6 @@ Route::get('/testing', function(){
     // $user->eskuls()->attach(\App\Models\Eskul::where('name','Basket')->first());
     // $user->eskuls()->detach();
 
-    $badminton = \App\Models\Eskul::where('name', 'Basket')->first();
-    dd($badminton ->users);
+    // $badminton = \App\Models\Eskul::where('name', 'Basket')->first();
+    // dd($badminton ->users);
 });
