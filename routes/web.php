@@ -69,7 +69,7 @@ Route::get('/testing', function(){
     // $profileDetail = Profile::first();
     // dd($profileDetail -> user);
 
-    $user = Usr::first();
+    // $user = Usr::first();
     // $user->products()->create([
     //     'name' => 'Plate',
     //     'description' => 'Plate Avengers',
@@ -77,7 +77,19 @@ Route::get('/testing', function(){
     // ]);
     //dd($user->products()->where('name', 'Plate')->get());
 
-    return view('list-products', [
-        'products' => $user->products
-    ]);
+    // return view('list-products', [
+    //     'products' => $user->products
+    // ]);
+
+    //$user = Usr::find(10);
+    // $user->eskuls()->attach(\App\Models\Eskul::where('name','Badminton')->first());
+    // $user->eskuls()->attach(\App\Models\Eskul::where('name','Marching Band')->first());
+    
+    // $user = Usr::find(5);
+    // $user->eskuls()->attach(\App\Models\Eskul::where('name','Badminton')->first());
+    // $user->eskuls()->attach(\App\Models\Eskul::where('name','Basket')->first());
+    // $user->eskuls()->detach();
+
+    $badminton = \App\Models\Eskul::where('name', 'Basket')->first();
+    dd($badminton ->users);
 });

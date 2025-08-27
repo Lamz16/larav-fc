@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\ProfileDetail as Profile;
 use App\Models\Product as Prod;
+use App\Models\Eskul as Eskul;
 
 class User extends Authenticatable
 {
@@ -54,5 +55,9 @@ class User extends Authenticatable
 
     public function products(){
         return $this->hasMany(Prod::class);
+    }
+
+    public function eskuls(){
+        return $this->belongsToMany(Eskul::class, 'user_eskul', 'eskul_id','user_id');
     }
 }
