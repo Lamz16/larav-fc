@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController as BC;
 use App\Models\Barang as Brg;
 use App\Models\User as Usr;
+Use App\Models\ProfileDetail as Profile;
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,13 +50,23 @@ Route::get('/testing', function(){
     //     'description' => 'Buku ke 1'
     // ]);
 
-    $user = Usr::find(1);
+    // $user = Usr::find(1);
     // $user->name = 'Salam';
     // $user->save();
 
-    $user -> update([
-        'name' => 'Andi Salam Syahputra',
-        'email' => 'andiku07@gmail.com',
-        'password' => 'pw',
-    ]);
+    // $user -> update([
+    //     'name' => 'Andi Salam Syahputra',
+    //     'email' => 'andiku07@gmail.com',
+    //     'password' => 'pw',
+    // ]);
+
+    // $user = Usr::first();
+    // $user->profileDetail()-> create([
+    //     'address' => 'Jember',
+    //     'education' => 'Bachelor Of Information System'
+    // ]);
+
+    $profileDetail = Profile::first();
+    dd($profileDetail -> user);
+
 });
