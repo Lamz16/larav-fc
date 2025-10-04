@@ -20,4 +20,9 @@ class Product extends Model
     public function user(){
         return $this->belongsTo(Usr::class);
     }
+
+    //untuk membuat acessor di perlukan get{namaFucntion}Attribute
+    public function getPriceFormattedAttribute(){
+        return formatRupiah($this->price);
+    }
 }
