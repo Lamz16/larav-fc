@@ -54,6 +54,10 @@ Route::get('/testing', function(){
     // $user->name = 'Salam';
     // $user->save();
 
+    // $user = Usr::first();
+    // $user->name = 'Andi Salam Syahputra';
+    // $user->save();
+
     // $user -> update([
     //     'name' => 'Andi Salam Syahputra',
     //     'email' => 'andiku07@gmail.com',
@@ -69,11 +73,11 @@ Route::get('/testing', function(){
     // $profileDetail = Profile::first();
     // dd($profileDetail -> user);
 
-    // $user = Usr::first();
+    //$user = Usr::first();
     // $user->products()->create([
-    //     'name' => 'Plate',
-    //     'description' => 'Plate Avengers',
-    //     'price' => 50000
+    //     'name' => 'Shield',
+    //     'description' => 'Thor Shield',
+    //     'price' => 150000
     // ]);
     //dd($user->products()->where('name', 'Plate')->get());
 
@@ -92,4 +96,14 @@ Route::get('/testing', function(){
 
     // $badminton = \App\Models\Eskul::where('name', 'Basket')->first();
     // dd($badminton ->users);
+
+
+    // $users = Usr::active()->get();
+    // dd($users);
+
+    //$users= Usr::all();
+    $users = Usr::with('products')->get();
+    foreach($users as $user) {
+        dump($user-> products);
+    }
 });
