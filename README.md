@@ -40,3 +40,29 @@ public function setNameAttribute($value)
 }
 
 ```
+
+# 🔭 Scope di Laravel Eloquent
+
+Laravel menyediakan fitur **Scope** untuk memudahkan kita memfilter query secara konsisten dan rapi.  
+Ada dua jenis scope yang umum digunakan:
+
+-   **Local Scope** → digunakan secara _manual_ di query tertentu
+-   **Global Scope** → diterapkan secara _otomatis_ pada semua query model
+
+---
+
+## 🧩 1️⃣ Local Scope
+
+Local scope digunakan untuk **mendefinisikan filter yang bisa digunakan kembali** saat melakukan query.  
+Nama method-nya **harus diawali dengan kata `scope`**.
+
+### 📘 Contoh
+
+```php
+// app/Models/User.php
+
+public function scopeActive($query)
+{
+    return $query->where('is_active', true);
+}
+```
