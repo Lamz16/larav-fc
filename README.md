@@ -66,3 +66,40 @@ public function scopeActive($query)
     return $query->where('is_active', true);
 }
 ```
+
+# 🐢⚡ Lazy Loading vs Eager Loading di Laravel Eloquent
+
+Di Laravel Eloquent, **Lazy Loading** dan **Eager Loading** mengatur bagaimana data relasi antar model diambil dari database.  
+Memahami perbedaannya sangat penting agar aplikasi kamu **efisien** dan **tidak terkena N+1 Query Problem**.
+
+---
+
+## 🐢 1️⃣ Lazy Loading
+
+**Lazy Loading** berarti data relasi **baru diambil saat dibutuhkan**.  
+Ini adalah perilaku default Eloquent.
+
+### 📘 Contoh:
+
+```php
+$products = Product::all();
+
+foreach ($products as $product) {
+    echo $product->user->name; // query baru dijalankan setiap kali diakses
+}
+```
+
+## ⚡ 2️⃣ Eager Loading
+
+**Eager Loading** berarti data relasi **diambil sekaligus saat query dijalankan**, menggunakan method `with()`.  
+Cara ini jauh lebih efisien karena **menghindari N+1 Query Problem**.
+
+### 📘 Contoh:
+
+```php
+$users = Usr::with('products')->get();
+
+foreach ($users as $user) {
+    dump($user->products); // semua produk sudah diambil, tidak ada query tambahan
+}
+```
