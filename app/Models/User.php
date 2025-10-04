@@ -60,4 +60,10 @@ class User extends Authenticatable
     public function eskuls(){
         return $this->belongsToMany(Eskul::class, 'user_eskul', 'user_id','eskul_id');
     }
+
+
+    public function getFormattedNameAttribute(){
+        return 'Mr. ' . $this->name;
+        
+    }
 }
