@@ -27,3 +27,16 @@ public function getNameAttribute($value)
     return ucwords($value);
 }
 ```
+
+## Contoh Mutator
+
+Mutator ini digunakan untuk membuat format nama
+
+```php
+// laravel akan otomatis mencari method dengan pola set{NamaKolom}Attribute
+public function setNameAttribute($value)
+{
+    $this->attributes['name'] = strtoupper($value);
+}
+
+```
