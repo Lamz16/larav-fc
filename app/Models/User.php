@@ -66,4 +66,14 @@ class User extends Authenticatable
         return 'Mr. ' . $this->name;
         
     }
+
+    public function setNameAttribute($value){
+
+      $this->attributes['name'] = strtoupper($value);
+
+    }
+
+      public function scopeActive($query){
+        return $query->where('is_active', true);
+    }
 }
